@@ -1,0 +1,35 @@
+﻿@page
+@model CreateReservationModel
+@{
+    ViewData["Title"] = "Reservation ";
+}
+
+<h4>Reservation Book </h4>
+<h5>Book Name :@Model.ReservationViewModel.BookName</h5>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.ReservationViewModel.ReservedUserName" class="control-label"></label>
+                <input asp-for="@Model.ReservationViewModel.ReservedUserName" class="form-control" />
+                <span asp-validation-for="@Model.ReservationViewModel.ReservedUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.ReservationViewModel.PhoneNumber" class="control-label"></label>
+                <input asp-for="@Model.ReservationViewModel.PhoneNumber" class="form-control" />
+                <span asp-validation-for="@Model.ReservationViewModel.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.ReservationViewModel.IdentityNumber" class="control-label"></label>
+                <input asp-for="@Model.ReservationViewModel.IdentityNumber" class="form-control" />
+                <span asp-validation-for="@Model.ReservationViewModel.IdentityNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Reserved" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
